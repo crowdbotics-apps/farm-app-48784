@@ -1,50 +1,72 @@
-import axios from "axios"
+import axios from "axios";
 const farmappAPI = axios.create({
   baseURL: "https://farm-app-48784.botics.co",
-  headers: { Accept: "application/json", "Content-Type": "application/json" }
-})
+  headers: {
+    Accept: "application/json",
+    "Content-Type": "application/json"
+  }
+});
+
 function api_docs_schema_retrieve(payload) {
-  return farmappAPI.get(`/api-docs/schema/`, { params: { lang: payload.lang } })
+  return farmappAPI.get(`/api-docs/schema/`, {
+    params: {
+      lang: payload.lang
+    }
+  });
 }
+
 function api_v1_login_create(payload) {
-  return farmappAPI.post(`/api/v1/login/`, payload)
+  return farmappAPI.post(`/api/v1/login/`, payload);
 }
+
 function api_v1_signup_create(payload) {
-  return farmappAPI.post(`/api/v1/signup/`, payload)
+  return farmappAPI.post(`/api/v1/signup/`, payload);
 }
+
 function rest_auth_login_create(payload) {
-  return farmappAPI.post(`/rest-auth/login/`, payload)
+  return farmappAPI.post(`/rest-auth/login/`, payload);
 }
+
 function rest_auth_logout_create(payload) {
-  return farmappAPI.post(`/rest-auth/logout/`)
+  return farmappAPI.post(`/rest-auth/logout/`);
 }
+
 function rest_auth_password_change_create(payload) {
-  return farmappAPI.post(`/rest-auth/password/change/`, payload)
+  return farmappAPI.post(`/rest-auth/password/change/`, payload);
 }
+
 function rest_auth_password_reset_create(payload) {
-  return farmappAPI.post(`/rest-auth/password/reset/`, payload)
+  return farmappAPI.post(`/rest-auth/password/reset/`, payload);
 }
+
 function rest_auth_password_reset_confirm_create(payload) {
-  return farmappAPI.post(`/rest-auth/password/reset/confirm/`, payload)
+  return farmappAPI.post(`/rest-auth/password/reset/confirm/`, payload);
 }
+
 function rest_auth_registration_create(payload) {
-  return farmappAPI.post(`/rest-auth/registration/`, payload)
+  return farmappAPI.post(`/rest-auth/registration/`, payload);
 }
+
 function rest_auth_registration_resend_email_create(payload) {
-  return farmappAPI.post(`/rest-auth/registration/resend-email/`, payload)
+  return farmappAPI.post(`/rest-auth/registration/resend-email/`, payload);
 }
+
 function rest_auth_registration_verify_email_create(payload) {
-  return farmappAPI.post(`/rest-auth/registration/verify-email/`, payload)
+  return farmappAPI.post(`/rest-auth/registration/verify-email/`, payload);
 }
+
 function rest_auth_user_retrieve(payload) {
-  return farmappAPI.get(`/rest-auth/user/`)
+  return farmappAPI.get(`/rest-auth/user/`);
 }
+
 function rest_auth_user_update(payload) {
-  return farmappAPI.put(`/rest-auth/user/`, payload)
+  return farmappAPI.put(`/rest-auth/user/`, payload);
 }
+
 function rest_auth_user_partial_update(payload) {
-  return farmappAPI.patch(`/rest-auth/user/`, payload)
+  return farmappAPI.patch(`/rest-auth/user/`, payload);
 }
+
 export const apiService = {
   api_docs_schema_retrieve,
   api_v1_login_create,
@@ -60,4 +82,4 @@ export const apiService = {
   rest_auth_user_retrieve,
   rest_auth_user_update,
   rest_auth_user_partial_update
-}
+};
